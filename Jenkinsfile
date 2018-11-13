@@ -47,9 +47,18 @@ pipeline {
       }
     }
     stage('deployment5') {
-      steps {
-        sleep 1
-        echo '333'
+      parallel {
+        stage('deployment5') {
+          steps {
+            sleep 1
+            echo '333'
+          }
+        }
+        stage('') {
+          steps {
+            input(message: 'aaa', id: 'aaa', ok: 'aaa', submitter: 'aaa', submitterParameter: 'aaa')
+          }
+        }
       }
     }
   }
