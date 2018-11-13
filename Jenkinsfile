@@ -54,9 +54,9 @@ pipeline {
             echo '333'
           }
         }
-        stage('') {
+        stage('step') {
           steps {
-            input(message: 'aaa', id: 'aaa', ok: 'aaa', submitter: 'aaa', submitterParameter: 'aaa')
+            input 'please input a message'
           }
         }
       }
